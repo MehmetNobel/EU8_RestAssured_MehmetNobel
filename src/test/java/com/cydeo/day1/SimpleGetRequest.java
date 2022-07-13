@@ -2,6 +2,7 @@ package com.cydeo.day1;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class SimpleGetRequest {
@@ -19,6 +20,12 @@ public class SimpleGetRequest {
 
         //printing the message.
         response.prettyPrint();
+
+        //we can add these
+        //Assertions.assertEquals(response.statusCode(),200);
+
+        //Assertions.assertEquals(response.contentType(),"application/json");
+
 
 
     }
