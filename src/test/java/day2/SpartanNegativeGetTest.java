@@ -26,7 +26,7 @@ public class SpartanNegativeGetTest {
         @DisplayName("GET request to /api/spartans/10")
         @Test
         public void test1(){
-            Response response = RestAssured.given().accept(ContentType.XML).when().get("/api/spartans");
+            Response response = RestAssured.given().accept(ContentType.XML).when().get("/api/spartans/10");
 
             //verify status code is 406
 
