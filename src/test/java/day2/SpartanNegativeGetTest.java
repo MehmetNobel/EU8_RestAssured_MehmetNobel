@@ -26,11 +26,13 @@ public class SpartanNegativeGetTest {
         @DisplayName("GET request to /api/spartans/10")
         @Test
         public void test1(){
-            Response response = RestAssured.given().accept(ContentType.XML).when().get();
+            Response response = RestAssured.given().accept(ContentType.XML).when().get("/api/spartans");
 
             //verify status code is 406
 
             System.out.println("response.statusCode() = " + response.statusCode());
+
+            response.prettyPrint();
             //assertEquals(406,response.statusCode());
             //verify content type
            // assertEquals("application/xml;charset=UTF-8",response.contentType());
