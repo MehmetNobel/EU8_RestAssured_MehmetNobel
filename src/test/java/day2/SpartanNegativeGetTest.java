@@ -32,8 +32,8 @@ public class SpartanNegativeGetTest {
 
             System.out.println("response.statusCode() = " + response.statusCode());
 
-            response.prettyPrint();
-            //assertEquals(406,response.statusCode());
+            //response.prettyPrint();
+            assertEquals(406,response.statusCode());
             //verify content type
            // assertEquals("application/xml;charset=UTF-8",response.contentType());
         }
