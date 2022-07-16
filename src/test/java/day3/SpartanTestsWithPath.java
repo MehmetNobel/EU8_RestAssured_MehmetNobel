@@ -5,6 +5,7 @@ import io.restassured.response.Response;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import utilities.SpartanTestBase;
 
 import java.util.List;
 
@@ -14,14 +15,8 @@ import static io.restassured.RestAssured.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-public class SpartanTestsWithPath {
+public class SpartanTestsWithPath extends SpartanTestBase {
 
-    //BeforeAll is a annotation equals to @BeforeClass in testNg, we use with static method name.
-    @BeforeAll
-    public static void init() {
-        baseURI = "http://35.171.2.97:8000";
-
-    }
 
     @DisplayName("Get one spartan with path method")
     @Test
