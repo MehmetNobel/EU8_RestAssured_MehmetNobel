@@ -14,7 +14,7 @@ public abstract class SpartanTestBase {
         baseURI = ConfigurationReader.getProperty("spartanUrl");
 
         String dbUrl = ConfigurationReader.getProperty("spartanDataBase");
-        String dbUsername = ConfigurationReader.getProperty("spartanUserName=SP");
+        String dbUsername = ConfigurationReader.getProperty("spartanUserName");
         String dbPassword = ConfigurationReader.getProperty("spartanPassword");
 
         DBUtils.createConnection(dbUrl,dbUsername,dbPassword);
@@ -22,7 +22,7 @@ public abstract class SpartanTestBase {
     }
 
     @AfterAll
-    public void tearDown(){
+    public static void tearDown(){
 
         DBUtils.destroy();
     }
