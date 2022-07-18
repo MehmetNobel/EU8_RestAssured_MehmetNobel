@@ -5,6 +5,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 //static needed methods below
+import java.util.Arrays;
+import java.util.List;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
@@ -65,6 +68,32 @@ public class HamcrestMatchersIntro {
 
         //check if the trimmed str is empty string
         assertThat(str.trim(),emptyString());
+    }
+
+    @DisplayName("HAMCREST FOR COLLECTION")
+    @Test
+    public void testCollection(){
+
+        List<Integer> list= Arrays.asList(1,4,5,6,89,32,54);
+
+        //check the size of list
+        assertThat(list, hasSize(7));
+
+        //check if this list hasItem 54
+        assertThat(list,hasItem(54));
+
+        //check if the list has some ıtems
+        assertThat(list,hasItems(1,4,5));
+
+        // MAGICAL METHOD : EVERY ITEM
+        //check if the item is greater than 0
+        assertThat(list,everyItem(greaterThan(0)));
+
+
+
+
+
+
 
 
     }
