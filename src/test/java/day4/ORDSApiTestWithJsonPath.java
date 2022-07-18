@@ -76,7 +76,8 @@ public class ORDSApiTestWithJsonPath extends HRTestBase {
         System.out.println("maxSalaryFirstName = " + maxSalaryFirstName);
 
         //get me all the last names of Stevens
-        System.out.println("jsonPath.get(\"items.findAll {it.first_name=\\\"Steven\\\"}.last_name\") = " + jsonPath.get("items.findAll {it.first_name==\"Steven\"}.last_name"));
+        System.out.println("jsonPath.get(\"items.findAll {it.first_name=\\\"Steven\\\"}.last_name\") = "
+                + jsonPath.get("items.findAll {it.first_name==\"Steven\"}.last_name"));
 
     }
 
