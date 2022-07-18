@@ -1,5 +1,6 @@
 package utilities;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 
 import static io.restassured.RestAssured.baseURI;
@@ -12,6 +13,18 @@ public abstract class SpartanTestBase {
     public static void init() {
         baseURI = ConfigurationReader.getProperty("spartanUrl");
 
+        String dbUrl = ConfigurationReader.getProperty("spartanDataBase");
+        String dbUsername = ConfigurationReader.getProperty("spartanUserName=SP");
+        String dbPassword = ConfigurationReader.getProperty("spartanPassword");
+
+        DBUtils.createConnection(dbUrl,dbUsername,dbPassword);
+
+    }
+
+    @AfterAll
+    public void tearDown(){
+
+        DBUtils.destroy();
     }
 
 

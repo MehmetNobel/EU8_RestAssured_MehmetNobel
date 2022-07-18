@@ -40,6 +40,36 @@ public class JSONtoJAVATest extends SpartanTestBase {
 
     }
 
+    @DisplayName("GET all Spartans and deserialize to MAP")
+    @Test
+    public void allSpartansToMap(){
+
+        Response response = given()
+                            .when().get("/api/spartans")
+                            .then().statusCode(200).extract().response();
+
+
+        //get the json and convert it to the map
+
+        //since we have lots of maps inside the json then we will hold these datas on list of map
+
+        List<Map<String,Object>> jsonList=response.as(List.class);
+
+        String name = (String) jsonList.get(0).get("name");
+
+        System.out.println("name = " + name);
+
+        System.out.println("jsonList.get(2).get(\"phone\") = " + jsonList.get(2).get("phone"));
+
+        //we are just retrieving the first map from the list.
+        Map<String, Object> oneMap = jsonList.get(0);
+
+        System.out.println("oneMap = " + oneMap);
+
+
+    }
+
+
 
 
 
