@@ -31,6 +31,7 @@ public class JSONtoJAVATest extends SpartanTestBase {
         //now giving us java map result
         System.out.println("jsonMap.toString() = " + jsonMap.toString());
 
+        //since we are getting and object data type from below, we must convert it to string
         String actualName = (String) jsonMap.get("name");
 
         System.out.println("actualName = " + actualName);

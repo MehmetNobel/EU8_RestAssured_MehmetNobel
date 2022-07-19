@@ -28,7 +28,7 @@ public class SpartanHamcrestTest extends SpartanTestBase {
                 .get("/api/spartans/search")
                 .then()
                 .statusCode(200)
-                .and().log().all()
+                .and().log().all()   // we are getting all the inf about response.
                 .body("totalElement", is(3)).extract().response();
 
         response.prettyPrint();

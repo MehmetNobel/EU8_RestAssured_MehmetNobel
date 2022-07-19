@@ -23,6 +23,10 @@ public class HamcrestMatchersIntro {
         assertThat(5 + 5, equalTo(10));
         assertThat(5 + 5, is(equalTo(10)));
 
+        assertThat(3+3,is(6));
+        assertThat(3+3, equalTo(6));
+        assertThat(3+3,is(equalTo(6)));
+
         //not method
         assertThat(5 + 5, not(9));
         assertThat(5 + 5, is(not(9)));
@@ -88,6 +92,11 @@ public class HamcrestMatchersIntro {
         // MAGICAL METHOD : EVERY ITEM
         //check if the item is greater than 0
         assertThat(list,everyItem(greaterThan(0)));
+
+        //we are checking if every item ends with et:
+        List<String> list2=Arrays.asList("ahmet","mehmet","muhammet");
+
+        assertThat(list2,everyItem(endsWith("et")));
 
 
 
