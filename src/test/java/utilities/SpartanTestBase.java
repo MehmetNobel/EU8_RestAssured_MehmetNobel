@@ -17,14 +17,14 @@ public abstract class SpartanTestBase {
         String dbUsername = ConfigurationReader.getProperty("spartanUserName");
         String dbPassword = ConfigurationReader.getProperty("spartanPassword");
 
-        DBUtils.createConnection(dbUrl,dbUsername,dbPassword);
+        //DBUtils.createConnection(dbUrl,dbUsername,dbPassword);
 
     }
 
     @AfterAll
     public static void tearDown(){
 
-        DBUtils.destroy();
+       // DBUtils.destroy();
     }
 
 
