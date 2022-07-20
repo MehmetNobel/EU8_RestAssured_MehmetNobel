@@ -51,7 +51,7 @@
             <artifactId>ojdbc8</artifactId>
             <version>19.3.0.0</version>
         </dependency>
-        <!-- lombok : make our job easy automatically brings getters ans setters and can perform ather functionalities. -->
+        <!-- lombok : make our job easy automatically brings getters and setters and other staff and so can perform ather functionalities. -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

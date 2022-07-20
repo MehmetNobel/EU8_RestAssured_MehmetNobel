@@ -28,14 +28,21 @@ public class ORDSPojoGetRequestTest extends HRTestBase {
 
         System.out.println("regionObject = " + regionObject);
 
-        System.out.println("regionObject.getRegion_id() = " + regionObject.getRegion_id());
+        // after the annototaions we used as Regionid
+        System.out.println("regionObject.getRegion_id() = " + regionObject.getRegionid());
 
-        System.out.println("regionObject.getRegion_name() = " + regionObject.getRegion_name());
+        // after the annototaions we used as Regionname
+        System.out.println("regionObject.getRegion_name() = " + regionObject.getRegionname());
 
         System.out.println("regionObject.getLinks().get(0) = " + regionObject.getLinks().get(0));
 
+        //gives the first element inside the links list.
         System.out.println("regionObject.getLinks().get(0).getHref() = " + regionObject.getLinks().get(0).getHref());
 
-
     }
+
+
+
+
+
 }

@@ -39,15 +39,14 @@ public class SpartanPojoGetRequestTest extends SpartanTestBase {
         //1 . using as() method
         //we converted json response to spartan object with the help of jackson
         //as() method uses jackson to deserialization (json to java)
-
-        Spartan spartan15=response.as(Spartan.class);
+        // Map<String, Object> = response.as(Map.class);  ==>> json to java map
+        Spartan spartan15=response.as(Spartan.class);   // json to Spartan POJO class
 
         System.out.println("spartan15 = " + spartan15);
         System.out.println("spartan15.getId() = " + spartan15.getId());
         System.out.println("spartan15.getName() = " + spartan15.getName());
         System.out.println("spartan15.getGender() = " + spartan15.getGender());
         System.out.println("spartan15.getPhone() = " + spartan15.getPhone());
-
 
         //2.way deserilization
         JsonPath jsonPath = response.jsonPath();
@@ -78,6 +77,12 @@ public class SpartanPojoGetRequestTest extends SpartanTestBase {
                 .get("/api/spartans/search");
 
         JsonPath jsonPath = response.jsonPath();
+
+        //we are storing the first element into a spartan class.
+        //since we get from content a list we store the first one like that : content[0]
+        Spartan sp15 = jsonPath.getObject("content[0]", Spartan.class);
+
+        System.out.println("sp15 = " + sp15);
 
         //converting datas to the search object
         Search search = response.as(Search.class);
@@ -111,10 +116,18 @@ public class SpartanPojoGetRequestTest extends SpartanTestBase {
                 .then()
                 .statusCode(200)
                 .extract().jsonPath().getList("content", Spartan.class);
+                                            // we are storing the spartans in a list.
 
         String name = spartanList.get(0).getName();
 
         System.out.println("name = " + name);
+
+        System.out.println("spartanList.size() = " + spartanList.size());
+
+        System.out.println("spartanList.get(29).getName() = " + spartanList.get(29).getName());
+
+
+
 
 
     }
