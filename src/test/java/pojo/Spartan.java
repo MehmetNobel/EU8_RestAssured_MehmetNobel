@@ -10,7 +10,7 @@ package pojo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-   @JsonIgnoreProperties(value = "id", allowSetters = true)
+@JsonIgnoreProperties(value = "id", allowSetters = true)
 // we write this to ignore id while serialization process.
 public class Spartan {
 
