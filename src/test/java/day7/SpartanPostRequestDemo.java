@@ -160,6 +160,51 @@ public class SpartanPostRequestDemo extends SpartanTestBase {
         response.prettyPrint();
 
     }
+ @DisplayName("POST with Map to Spartan Class")
+    @Test
+    public void postMethod4() {
+
+        //we are using spartan object to create new post request
+        Spartan spartan = new Spartan();
+
+        spartan.setGender("Female");
+        spartan.setName("Ayse");
+        spartan.setPhone(3334444333L);
+
+        System.out.println("spartan = " + spartan);
+
+
+        Response response = given().accept(ContentType.JSON)
+                .contentType(ContentType.JSON)
+                //RESTASSURED LIBRARIY AUTOMATICALLY CONVERTS JAVA MAP TO THE JSON DATA TYPE.
+                // THIS IS DONE BY RESTASSURED NOT JACKSON ACTUALLY
+                .body(spartan).log().all()
+                .when()
+                .post("/api/spartans");
+
+        //veriy that status code is 201
+        assertThat(response.statusCode(), is(201));
+        assertThat(response.contentType(), is("application/json"));
+
+        //getting all the spartans after creating new one.
+        //Response response1 = given().get("api/spartans");
+
+        //response1.prettyPrint();
+
+        String expectedMessage = "A Spartan is Born!";
+
+        assertThat(response.path("success"), is(expectedMessage));
+
+        assertThat(response.path("data.name"), is("Ayse"));
+
+        assertThat(response.path("data.gender"), is("Female"));
+
+        //since phone data type is long we define as long here
+        assertThat(response.path("data.phone"), is(3334444333L));
+
+        response.prettyPrint();
+
+    }
 
 
 }
