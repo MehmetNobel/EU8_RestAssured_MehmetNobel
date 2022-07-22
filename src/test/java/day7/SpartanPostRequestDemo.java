@@ -121,7 +121,6 @@ public class SpartanPostRequestDemo extends SpartanTestBase {
 
         //we are using spartan object to create new post request
         Spartan spartan = new Spartan();
-
         spartan.setGender("Female");
         spartan.setName("Ayse");
         spartan.setPhone(3334444333L);
