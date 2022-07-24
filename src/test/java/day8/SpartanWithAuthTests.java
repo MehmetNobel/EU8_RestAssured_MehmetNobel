@@ -26,4 +26,27 @@ public class SpartanWithAuthTests extends SpartanAuthTestBase {
     }
 
 
+    @DisplayName("GET /api/spartans as admin user and expect 200")
+    @Test
+    public void testAdmin() {
+        given()
+                .auth().basic("admin","admin")
+                .and().accept(ContentType.JSON)
+        .when()
+                .get("/api/spartans")
+        .then()
+                .statusCode(200)
+                .log().all();
+
+    }
+
+
+
+
+
+
+
+
+
+
 }
