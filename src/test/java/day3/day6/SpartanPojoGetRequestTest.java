@@ -1,4 +1,4 @@
-package day6;
+package day3.day6;
 
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;

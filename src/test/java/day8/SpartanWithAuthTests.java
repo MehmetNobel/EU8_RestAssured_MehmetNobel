@@ -15,7 +15,7 @@ public class SpartanWithAuthTests extends SpartanAuthTestBase {
 
     @DisplayName("GET /api/spartans as a public user (guest) and expect 401")
     @Test
-    public void test1() {
+    public void test1() {   //FAILED
         given().accept(ContentType.JSON)
                 .when()
                 .get("/api/spartans")
@@ -41,7 +41,7 @@ public class SpartanWithAuthTests extends SpartanAuthTestBase {
     }
 @DisplayName("DELETE /api/spartans{id} as editor user expect 403")
     @Test
-    public void testEditorDelete() {
+    public void testEditorDelete() {   //FAILED
         given()
                 .auth().basic("editor", "editor")
                 .and().accept(ContentType.JSON)
