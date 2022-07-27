@@ -37,7 +37,7 @@ public class ZipTestWithHemcrest extends ZippoTestBase {
                 .log().all();
 
         // we get the all the response with log all method.
-        //checking body with hemcrestmatchers method.
+        //checking body with hemcrestmatchers method.we chain all the specs inside one command.
         // WE CAN WRITE LOTS OF THINGS INSIDE BODY
 
 

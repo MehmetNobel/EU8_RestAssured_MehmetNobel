@@ -17,6 +17,7 @@ public class ExampleWithPojo extends ZippoTestBase{
                 .get("/{zip}");
 
 
+        //we are converting datas to java via deserialization
         Postcode postcode = response.as(Postcode.class);
 
         System.out.println("postcode.getCountry() = " + postcode.getCountry());

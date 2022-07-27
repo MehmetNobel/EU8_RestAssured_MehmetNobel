@@ -26,6 +26,7 @@ public class Postcode {
     @JsonProperty("country abbreviation")
     private String country_abbreviation;
 
+    //this is important to define inside list as Place object; otherwise it will not work.
     @JsonProperty("places")
     private List<Place> places;
 
